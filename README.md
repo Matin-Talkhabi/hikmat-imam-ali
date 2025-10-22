@@ -29,14 +29,29 @@ cd hekmat_bot
 pip install -r requirements.txt
 ```
 
-3. **Run the bot:**
+3. **Set up environment variable:**
+   - Get your bot token from [@BotFather](https://t.me/BotFather)
+   - Set the environment variable:
+   
+   **Windows (Command Prompt):**
+   ```cmd
+   set TELEGRAM_BOT_TOKEN=your_bot_token_here
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   $env:TELEGRAM_BOT_TOKEN="your_bot_token_here"
+   ```
+   
+   **Linux/Mac:**
+   ```bash
+   export TELEGRAM_BOT_TOKEN=your_bot_token_here
+   ```
+
+4. **Run the bot:**
 ```bash
 python hekmat_bot.py
 ```
-
-4. **Enter bot token:**
-   - Get your bot token from [@BotFather](https://t.me/BotFather)
-   - Enter the token in the console
 
 ## Usage 📱
 

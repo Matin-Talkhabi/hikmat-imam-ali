@@ -1,6 +1,7 @@
 import requests
 import re
 import random
+import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
@@ -74,8 +75,16 @@ async def random_hikmat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
 
 if __name__ == '__main__':
-    input_token_bot = input("Enter your bot token: ")
-    token = input_token_bot.strip()
+    # Get bot token from environment variable
+    token = os.getenv('TELEGRAM_BOT_TOKEN')
+    
+    if not token:
+        print("Error: TELEGRAM_BOT_TOKEN environment variable is not set!")
+        print("Please set your bot token as an environment variable:")
+        print("Windows: set TELEGRAM_BOT_TOKEN=your_bot_token_here")
+        print("Linux/Mac: export TELEGRAM_BOT_TOKEN=your_bot_token_here")
+        exit(1)
+    
     app = ApplicationBuilder().token(token).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("random", random_hikmat))
