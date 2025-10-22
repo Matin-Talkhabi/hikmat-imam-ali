@@ -16,7 +16,7 @@ A Telegram bot that displays random wisdom quotes from Nahj al-Balagha.
 - Python 3.7 or higher
 - Telegram bot token
 
-### Installation Steps
+### Local Installation
 
 1. **Clone the project:**
 ```bash
@@ -52,6 +52,29 @@ pip install -r requirements.txt
 ```bash
 python hekmat_bot.py
 ```
+
+### Railway Deployment 🚂
+
+1. **Connect to Railway:**
+   - Go to [Railway.app](https://railway.app)
+   - Sign in with GitHub
+   - Click "New Project" → "Deploy from GitHub repo"
+   - Select your repository
+
+2. **Configure Environment Variables:**
+   - In Railway dashboard, go to your project
+   - Click on "Variables" tab
+   - Add: `TELEGRAM_BOT_TOKEN` = `your_bot_token_here`
+
+3. **Deploy:**
+   - Railway will automatically detect it's a Python project
+   - The `railway.json` file will configure the deployment
+   - Your bot will start automatically!
+
+**Railway Configuration:**
+- **Start Command:** `python hekmat_bot.py`
+- **Environment Variable:** `TELEGRAM_BOT_TOKEN`
+- **Auto-restart:** Enabled on failure
 
 ## Usage 📱
 
